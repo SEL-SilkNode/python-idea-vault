@@ -13,10 +13,12 @@ while True:
 
 	elif command == "r":
 		with open("ideas.txt", "r") as file:
-			ideas = file.read()
+			ideas = file.readlines()
 		
 		print("\n===== SAVED IDEAS =====")
-		print(ideas)
+		
+		for number, idea in enumerate(ideas, start=1):
+			print(f"{number}. {idea.strip()}")
 
 	elif command == "q":
 		print("See ya.")
